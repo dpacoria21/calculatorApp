@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --color: #34a3e7;    
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    margin: 10px;
+    width: 325px;
+    padding: 20px;
+    height: 550px;
+    border-radius: 10px;
+    background: #64a4e7;
+    display: grid;
+    place-content: center;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 3.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "result result result result"
+        "percent reboot restart delete"
+        "fraction pow sqrt division"
+        "n7 n8 n9 multiplication"
+        "n4 n5 n6 minus"
+        "n1 n2 n3 add"
+        "negative n0 decimal equal";
+}
+
+.panel {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.change-light {
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    background: #b465f3;
+    left: calc(50% - 50px);
+    top: 0px;
+    border-radius: 15px;
+    font-size: 30px;
+    display: flex;
+    transition: 1s linear;
+    justify-content: flex-end;
+}
+.option {
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+    background: #565656;
+    transition: .5s linear;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #a745e2;
+    border-radius: 10px;
+}
+
+.multiplication {
+    grid-area: multiplication;
+}
+.minus {
+    grid-area: minus;
+}
+.add {
+    grid-area: add;
+}
+.decimal {
+    grid-area: decimal;
+}
+.equal {
+    grid-area: equal;
+}
+
+.result {
+    grid-area: result;
+}
+.percent {
+    grid-area: percent;
+}
+.reboot {
+    grid-area: reboot;
+}
+.restart {
+    grid-area: restart;
+}
+.delete {
+    grid-area: delete;
+}
+.fraction {
+    grid-area: fraction;
+}
+.pow {
+    grid-area: pow;
+}
+.sqrt {
+    grid-area: sqrt;
+}
+.division {
+    grid-area: division;
+}
+.n-0 {
+    grid-area: n0;
+}
+.n-1 {
+    grid-area: n1;
+}
+.n-2 {
+    grid-area: n2;
+}
+.n-3 {
+    grid-area: n3;
+}
+.n-4 {
+    grid-area: n4;
+}
+.n-5 {
+    grid-area: n5;
+}
+.n-6 {
+    grid-area: n6;
+}
+.n-7 {
+    grid-area: n7;
+}
+.n-8 {
+    grid-area: n8;
+}
+.n-9 {
+    grid-area: n9;
+}
