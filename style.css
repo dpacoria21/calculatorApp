@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 * {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -9,6 +12,7 @@
 }
 
 body {
+    background: #f5f4f4;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -21,10 +25,12 @@ body {
     padding: 20px;
     height: 550px;
     border-radius: 10px;
-    background: #64a4e7;
+    background: #fff;
+    box-shadow: 0 3px 15px rgb(255, 255, 255),
+                3px 0 15px rgba(50, 50, 50, 0.4);
     display: grid;
     place-content: center;
-    gap: 15px;
+    gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 3.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
@@ -42,7 +48,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-right: 10px;
+    padding: 0px 0px 8px 0px;
     font-size: 40px;
     font-weight: bold;
     border-radius: 10px;
@@ -50,9 +56,11 @@ body {
 
 .change-light {
     position: absolute;
+    padding: 3px;
     width: 100px;
     height: 35px;
-    background: #b465f3;
+    box-shadow: 0px 0px 10px inset rgba(55, 55, 55, 0.4),
+                0px 0px 10px inset rgba(245, 245, 245, .5);
     left: calc(50% - 50px);
     top: 0px;
     border-radius: 15px;
@@ -65,15 +73,20 @@ body {
     width: 50%;
     height: 100%;
     border-radius: 15px;
-    background: #565656;
+    background: #d8d4d4;
     transition: .5s linear;
 }
 
 .button {
+    font-family: 'Archivo Black', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #a745e2;
+    font-size: 20px;
+    font-weight: 400;
+    background: #f6f6f6;
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 1),
+                2px 0px 5px rgba(95, 95, 95, 0.4);
     border-radius: 10px;
 }
 
