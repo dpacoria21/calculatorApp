@@ -1,18 +1,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+:root {
+    --color-fondo: #e2e2e2; 
+    --color-buttons: #f6f6f6;   
+    --color-calculator: #fff;
+    --color-numbers: #050505;
+
+    --color-fondo-dark: #252525;
+    --color-calculator-dark: #101010;
+    --color-buttons-dark: #151515;
+    --color-numbers-dark: #e5e5e5;
+}
+
 * {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
+    color: var(--color-numbers);
+    transition: .5s linear;
 }
 
-:root {
-    --color: #34a3e7;    
-}
 
 body {
-    background: #f5f4f4;
+    background: var(--color-fondo);
+    transition: .5s linear;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -25,9 +37,10 @@ body {
     padding: 20px;
     height: 550px;
     border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 3px 15px rgb(255, 255, 255),
-                3px 0 15px rgba(50, 50, 50, 0.4);
+    background: var(--color-calculator);
+    transition: .5s linear;
+    /* box-shadow: 0 3px 15px rgb(255, 255, 255), */
+                /* 3px 0 15px rgba(50, 50, 50, 0.4); */
     display: grid;
     place-content: center;
     gap: 10px;
@@ -59,8 +72,9 @@ body {
     padding: 3px;
     width: 100px;
     height: 35px;
-    box-shadow: 0px 0px 10px inset rgba(55, 55, 55, 0.4),
-                0px 0px 10px inset rgba(245, 245, 245, .5);
+    background: #4b4a4a;
+    /* box-shadow: 0px 0px 10px inset rgba(55, 55, 55, 0.4), */
+                /* 0px 0px 10px inset rgba(245, 245, 245, .5); */
     left: calc(50% - 50px);
     top: 0px;
     border-radius: 15px;
@@ -73,7 +87,8 @@ body {
     width: 50%;
     height: 100%;
     border-radius: 15px;
-    background: #d8d4d4;
+    background: var(--color-buttons);
+    transition: .5s linear;
     transition: .5s linear;
 }
 
@@ -84,9 +99,10 @@ body {
     justify-content: center;
     font-size: 20px;
     font-weight: 400;
-    background: #f6f6f6;
-    box-shadow: 0px 2px 10px rgba(255, 255, 255, 1),
-                2px 0px 5px rgba(95, 95, 95, 0.4);
+    background: var(--color-buttons);
+    transition: .5s linear;
+    /* box-shadow: 0px 2px 10px rgba(255, 255, 255, 1), */
+                /* 2px 0px 5px rgba(95, 95, 95, 0.4); */
     border-radius: 10px;
 }
 
