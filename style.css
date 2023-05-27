@@ -10,11 +10,12 @@
 
 * {
     margin: 0;
+    padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
     color: var(--color-numbers);
-    transition: .5s linear;
 }
+
 
 
 body {
@@ -26,11 +27,19 @@ body {
     justify-content: center;
 }
 
+.container {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+}
+
 .calculator {
     margin: 10px;
-    width: 325px;
+    /* min-width: 275px; */
+    width: 100%;
     padding: 20px;
-    height: 550px;
+    min-height: 550px;
+    height: 100%;
     border-radius: 10px;
     background: var(--color-calculator);
     transition: .5s linear;
@@ -49,6 +58,7 @@ body {
         "n4 n5 n6 minus"
         "n1 n2 n3 add"
         "negative n0 decimal equal";
+    word-break: break-all;
 }
 
 .panel {
@@ -56,11 +66,14 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 0px 0px 8px 0px;
+    padding: 45px 0px 8px 0px;
     font-size: 40px;
     font-weight: bold;
     border-radius: 10px;
+    /* border: 1px solid black; */
+    /* overflow: auto; */
 }
+
 
 .change-light {
     position: absolute;
@@ -98,7 +111,6 @@ body {
     justify-content: center;
     border-radius: 15px;
     background: var(--color-buttons);
-    transition: .5s linear;
     transition: .5s linear;
 }
 
