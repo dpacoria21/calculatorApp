@@ -26,7 +26,7 @@ const changeModTheme = () => {
         root.style.setProperty('--color-numbers', '#050505');
     }else {
         root.style.setProperty('--color-fondo', '#252525');
-        root.style.setProperty('--color-buttons', '#151515');
+        root.style.setProperty('--color-buttons', '#202020');
         root.style.setProperty('--color-calculator', '#101010');
         root.style.setProperty('--color-numbers', '#d2d2d2');
         sun.style.opacity = '0';
