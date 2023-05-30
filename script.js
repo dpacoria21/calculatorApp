@@ -1,3 +1,5 @@
+import './calculator.js'
+
 const light = document.querySelector('.option');
 const sun = document.querySelector('.sun');
 const moon = document.querySelector('.moon');

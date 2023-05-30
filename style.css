@@ -61,11 +61,17 @@ body {
     word-break: break-all;
 }
 
+.operations {
+    font-size: 20px;
+    color: #595959;
+}
+
 .panel {
     position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    flex-direction: column;
     padding: 45px 0px 8px 0px;
     font-size: 40px;
     font-weight: bold;
@@ -73,6 +79,8 @@ body {
     /* border: 1px solid black; */
     /* overflow: auto; */
 }
+
+
 
 
 .change-light {
@@ -159,6 +167,17 @@ body {
 .delete {
     grid-area: delete;
 }
+
+.delete svg {
+    width: 25px;
+    height: 25px;
+}
+
+img {
+    width: 25px;
+    height: 25px;
+}
+
 .fraction {
     grid-area: fraction;
 }
