@@ -7,6 +7,56 @@ const display = document.querySelector('.panel-num');
 const displaySave = document.querySelector('.operations');
 
 const buttons = document.querySelectorAll('.button');
+
+const chooseOperation = (doing, auxiliar) => {
+    if(value1!==undefined && display.textContent==='0') {
+        displaySave.textContent = `${value1}${doing}`;
+        operation = auxiliar ?? doing;
+        return;
+    }
+    value1 = +display.textContent;
+    displaySave.textContent = `${value1}${doing}`;
+    operation = auxiliar ?? doing;
+    display.textContent = '0';
+}
+
+console.log(8**(1/2));
+
+const chooseOption = (option) => {
+    if(!option) return;
+    switch(option) {
+        case '+':
+            chooseOperation('+');
+            break;
+        case '-':
+            chooseOperation('-');
+            break;
+        case 'X':
+            chooseOperation('x', '*');
+            break;
+        case '/':
+            chooseOperation('/');
+            break;
+        case '%':
+            chooseOperation('%');
+            break;
+        case 'sqrt':
+            break;
+        case 'pow':
+            chooseOperation('^', '**');
+            break;
+        case '=':
+            if(operation==='/' && +display.textContent===0) return alert('No se puede dividir por 0');
+            value2 = display.textContent;
+            displaySave.textContent+=value2;
+            display.textContent = eval(`${value1}${operation}${value2}`);
+            value1 = eval(`${value1}${operation}${value2}`);
+            value2 = 0;
+            break;
+
+        }
+}
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let option;
@@ -22,63 +72,12 @@ buttons.forEach((button) => {
                 display.textContent = '';
             }
 
-            if(isFirstValue) {
-                display.textContent+=+option;
-            }else {
-                display.textContent+=+option;
-            }
+          
+            display.textContent+=option;
+            
         }else {
-            if(!option) return;
-            switch(option) {
-                case '+':
-                    if(!value1) {
-                        displaySave.textContent = `${value1}+`;
-                        operation = '+';
-                        display.textContent = '0';
-                    }
-                    value1 = +display.textContent;
-                    displaySave.textContent = `${value1}+`;
-                    operation = '+';
-                    display.textContent = '0';
-                    break;
-                case '-':
-                    value1 = +display.textContent;
-                    displaySave.textContent = `${value1}-`;
-                    operation = '-';
-                    display.textContent = '0';
-                    break;
-                case 'X':
-                    value1 = +display.textContent;
-                    displaySave.textContent = `${value1}x`;
-                    operation = '*';
-                    display.textContent = '0';
-                    break;
-                case '/':
-                    value1 = +display.textContent;
-                    displaySave.textContent = `${value1}/`;
-                    operation = '/';
-                    display.textContent = '0';
-                    break;
-                case '%':
-                    break;
-                case 'sqrt':
-                    break;
-                case 'pow':
-                    break;
-                case '=':
-                    if(operation==='/' && +display.textContent===0) return;
-                    value2 = display.textContent;
-                    displaySave.textContent+=value2;
-                    console.log(`${value1}${operation}${value2}`);
-
-                    display.textContent = eval(`${value1}${operation}${value2}`);
-                    value1 = eval(displaySave.textContent);
-
-                    value2 = 0;
-
-                    break;
-
-            }
+            chooseOption(option);
         }
     })
 });
+
