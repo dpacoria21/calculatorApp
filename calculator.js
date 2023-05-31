@@ -22,6 +22,13 @@ const chooseOperation = (doing, auxiliar) => {
         value1 = +display.textContent;
         operation = '';
         return;
+    }else if(operation!=='' && operation !== doing && operation!==auxiliar) {
+        let total = eval(`${value1}${operation}${display.textContent}`);
+        displaySave.textContent = `${total}${doing ?? auxiliar}`;
+        value1 = total;
+        display.textContent = 0;
+        operation = doing ?? auxiliar;
+        return;
     }
     value1 = +display.textContent;
     displaySave.textContent = `${value1}${doing}`;
@@ -32,7 +39,7 @@ const chooseOperation = (doing, auxiliar) => {
 
 const doOperation = () => {
     if(operation === '%' && +display.textContent <= 0) return alert('Introducir un valor mayor a 0');
-    if (operation === '/' && +display.textContent === 0) return alert('No se puede dividir por 0');
+    if(operation === '/' && +display.textContent === 0) return alert('No se puede dividir por 0');
     if(operation === '**' && value1 === 0 && +display.textContent===0) return alert('No se puede 0 elevado a 0');
     if (operation === '') return;
     if (value1 === +display.textContent && value2 !== 0) {
@@ -65,7 +72,6 @@ const chooseOption = (option) => {
             chooseOperation('/');
             break;
         case '%':
-            
             chooseOperation('%');
             break;
         case 'sqrt':
@@ -76,10 +82,8 @@ const chooseOption = (option) => {
         case 'pow':
             chooseOperation('^', '**');
             break;
-        case 'C':
-            value1 = value2 = 0;
-            displaySave.textContent = '';
-            display.textContent = 0;
+        case 'porcentaje':
+            display.textContent = (+display.textContent)/100;
             operation = '';
             break;
         case 'CE':
