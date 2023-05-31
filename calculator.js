@@ -21,7 +21,7 @@ const chooseOperation = (doing, auxiliar) => {
     display.textContent = '0';
 }
 
-console.log(eval(''));
+
 
 const chooseOption = (option) => {
     if(!option) return;
@@ -102,14 +102,12 @@ buttons.forEach((button) => {
         }else {
             option = button.textContent;
         }
-        console.log(+option);
         if(!isNaN(+option)) {
 
             if(+display.textContent === 0) {
                 display.textContent = '';
             }
 
-          
             display.textContent+=option;
             
         }else {
