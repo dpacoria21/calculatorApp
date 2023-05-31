@@ -35,7 +35,7 @@ body {
 
 .calculator {
     margin: 10px;
-    width: 400px;
+    width: 350px;
     padding: 20px;
     min-height: 650px;
     height: 100%;
@@ -169,9 +169,11 @@ body {
     grid-area: delete;
 }
 
-.delete svg {
+.button-delete {
     width: 25px;
     height: 25px;
+    fill: var(--color-numbers);
+    transition: 0.5s linear;
 }
 
 img {
