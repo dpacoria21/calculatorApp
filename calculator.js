@@ -43,7 +43,7 @@ const chooseOption = (option) => {
             break;
         case 'sqrt':
             if(display.textContent.includes('-')) return alert('No se puede sacar raiz cuadrada a numeros negativos');
-            display.textContent = Math.sqrt(+display.textContent);
+            display.textContent = Math.round(Math.sqrt(+display.textContent)*1000000)/1000000;
             break;
         case 'pow':
             chooseOperation('^', '**');
@@ -64,7 +64,7 @@ const chooseOption = (option) => {
             }
             break;
         case '1/x':
-            display.textContent = 1/(+display.textContent);
+            display.textContent = (Math.round((1/(+display.textContent))*1000000))/1000000;
             break;
         case '+/-':
             if(display.textContent.includes('-')) {
