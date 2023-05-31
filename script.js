@@ -23,7 +23,7 @@ const changeModTheme = () => {
         sun.style.opacity = '1';
         moon.style.opacity = '0';
         root.style.setProperty('--color-fondo', '#e2e2e2');
-        root.style.setProperty('--color-buttons', '#f6f6f6');
+        root.style.setProperty('--color-buttons', '#d1d1d1');
         root.style.setProperty('--color-calculator', '#fff');
         root.style.setProperty('--color-numbers', '#050505');
     }else {

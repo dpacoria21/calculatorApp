@@ -10,23 +10,30 @@ const displaySave = document.querySelector('.operations');
 const buttons = document.querySelectorAll('.button');
 
 const chooseOperation = (doing, auxiliar) => {
-    value2 = 0;
     if (value1 !== undefined && display.textContent === '0') {
         displaySave.textContent = `${value1}${doing}`;
         operation = auxiliar ?? doing;
         return;
-    } else if(operation === doing || operation === auxiliar) {
-        doOperation();
+        
+    }else if(operation === doing || operation === auxiliar) {
+        display.textContent = eval(`${value1}${operation}${display.textContent}`);
+        console.log(`${value1}${operation}${display.textContent}`);
+        displaySave.textContent = display.textContent;
+        value1 = +display.textContent;
+        operation = '';
         return;
     }
     value1 = +display.textContent;
     displaySave.textContent = `${value1}${doing}`;
     operation = auxiliar ?? doing;
     display.textContent = '0';
+    value2 = 0;
 }
 
 const doOperation = () => {
+    if(operation === '%' && +display.textContent <= 0) return alert('Introducir un valor mayor a 0');
     if (operation === '/' && +display.textContent === 0) return alert('No se puede dividir por 0');
+    if(operation === '**' && value1 === 0 && +display.textContent===0) return alert('No se puede 0 elevado a 0');
     if (operation === '') return;
     if (value1 === +display.textContent && value2 !== 0) {
         displaySave.textContent = `${value1}${operation}${value2}`;
@@ -58,7 +65,7 @@ const chooseOption = (option) => {
             chooseOperation('/');
             break;
         case '%':
-
+            
             chooseOperation('%');
             break;
         case 'sqrt':
@@ -70,12 +77,16 @@ const chooseOption = (option) => {
             chooseOperation('^', '**');
             break;
         case 'C':
+            value1 = value2 = 0;
+            displaySave.textContent = '';
             display.textContent = 0;
+            operation = '';
             break;
         case 'CE':
             value1 = value2 = 0;
             displaySave.textContent = '';
             display.textContent = 0;
+            operation = '';
             break;
         case 'delete':
             display.textContent = display.textContent.substring(0, display.textContent.length - 1);
